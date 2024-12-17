@@ -26,6 +26,7 @@ import {
 import { bootstrapPlugin } from "@ai16z/plugin-bootstrap";
 import { DirectClient } from "@ai16z/client-direct";
 import { evmPlugin } from "@ai16z/plugin-evm";
+import { depinPlugin } from "@ai16z/plugin-depin";
 import { storyPlugin } from "@ai16z/plugin-story";
 import { imageGenerationPlugin } from "@ai16z/plugin-image-generation";
 import { createNodePlugin } from "@ai16z/plugin-node";
@@ -448,6 +449,7 @@ export async function createAgent(
                 getSecret(character, "WALLET_PUBLIC_KEY")?.startsWith("0x"))
                 ? evmPlugin
                 : null,
+            depinPlugin,
             getSecret(character, "FAL_API_KEY") ||
             getSecret(character, "OPENAI_API_KEY") ||
             getSecret(character, "VENICE_API_KEY") ||
