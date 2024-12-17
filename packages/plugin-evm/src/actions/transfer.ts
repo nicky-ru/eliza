@@ -81,7 +81,7 @@ const buildTransferDetails = async (
 
     const contextWithChains = context.replace(
         "SUPPORTED_CHAINS",
-        chains.toString()
+        chains.map(item => `"${item}"`).join("|")
     );
 
     const transferDetails = (await generateObjectDeprecated({
